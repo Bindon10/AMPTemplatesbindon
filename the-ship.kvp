@@ -26,6 +26,7 @@ Meta.AppIsMultiIPAware=False
 Meta.ConfigVersion=1.1
 Meta.ReleaseNotes=
 Meta.BreakingReleaseNotes=
+Meta.AppIsMultiIPAware=True
 App.DisplayName=The Ship
 App.RootDir=./ship/
 App.BaseDirectory=./ship/2403/
