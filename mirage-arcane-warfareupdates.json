@@ -22,7 +22,7 @@
         "UpdateSourceData": "https://raw.githubusercontent.com/Bindon10/AMPTemplatesbindon/main/mirage-arcane-warfaredefaultgame.ini",
         "UpdateSourceTarget": "{{$FullBaseDir}}TBL/Config",
         "UpdateSourceArgs": "DefaultGame.ini",
-        "OverwriteExistingFiles": false
+        "OverwriteExistingFiles": true
     },
     {
         "UpdateStageName": "Proton GE Download",
