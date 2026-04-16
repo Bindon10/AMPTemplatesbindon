@@ -389,7 +389,6 @@
         "FieldName": "sv_pure",
         "InputType": "enum",
         "ParamFieldName": "sv_pure",
-        "IncludeInCommandLine": true,
         "DefaultValue": "0",
         "EnumValues": {
             "0": "Client files not restricted",
@@ -405,7 +404,6 @@
         "FieldName": "sv_pure_trace",
         "InputType": "enum",
         "ParamFieldName": "sv_pure_trace",
-        "IncludeInCommandLine": true,
         "DefaultValue": "0",
         "EnumValues": {
             "0": "Disable CRC Check Messages",
