@@ -1147,10 +1147,9 @@
         "FieldName": "InstallbyURL",
         "InputType": "enum",
         "ParamFieldName": "InstallbyURL",
-        "DefaultValue": "false",
+        "DefaultValue": "true",
         "EnumValues": {
             "none": "Do nothing",
-			"extract": "Extract Only",
             "false": "Install Vanilla",
             "true": "Install Specified URL Build"
         }
@@ -1177,46 +1176,6 @@
         "FieldName": "BasePassword",
         "InputType": "password",
         "ParamFieldName": "BasePassword",
-        "EnumValues": {}
-    },
-    {
-        "DisplayName": "Server Patch Management",
-        "Category": "Updates",
-        "Subcategory": "Server Download:build:4",
-        "Description": "Sets if a patch should be installed during the update process.",
-        "Keywords": "install,download,update,URL",
-        "FieldName": "InstallPatch",
-        "InputType": "enum",
-        "ParamFieldName": "InstallPatch",
-        "DefaultValue": "false",
-        "EnumValues": {
-            "false": "Do Nothing",
-			"extract": "Extract Only",
-            "true": "Install Specified Patch"
-        }
-    },
-    {
-        "DisplayName": "Patch Download URL",
-        "Category": "Updates",
-        "Subcategory": "Server Download:build:4",
-        "Description": "Specifies the download link for the server build to install, this should be a ZIP file (but on linux tar.gz is acceptable)",
-        "Keywords": "download,build,version,URL",
-        "FieldName": "PatchURL",
-        "InputType": "text",
-        "ParamFieldName": "PatchURL",
-        "DefaultValue": "",
-        "Placeholder": "",
-        "EnumValues": {}
-    },
-    {
-        "DisplayName": "Patch Password",
-        "Category": "Updates",
-        "Subcategory": "Server Download:build:4",
-        "Description": "",
-        "Keywords": "",
-        "FieldName": "PatchPassword",
-        "InputType": "password",
-        "ParamFieldName": "PatchPassword",
         "EnumValues": {}
     }
 ]

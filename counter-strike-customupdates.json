@@ -9,7 +9,7 @@
         "UpdateStageName": "7-Zip Download",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "FetchURL",
-        "UpdateSourceData": "https://www.7-zip.org/a/7z2403-linux-x64.tar.xz",
+        "UpdateSourceData": "https://github.com/ip7z/7zip/releases/download/26.00/7z2600-linux-arm64.tar.xz",
         "UpdateSourceTarget": "{{$FullRootDir}}7-Zip",
         "OverwriteExistingFiles": true
     },
@@ -18,7 +18,7 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd {{$FullRootDir}}/7-Zip && tar -xf 7z2403-linux-x64.tar.xz >/dev/null 2>&1 && rm -f 7z2403-linux-x64.tar.xz\"",
+        "UpdateSourceArgs": "-c \"cd {{$FullRootDir}}/7-Zip && tar -xf 7z2600-linux-arm64.tar.xz >/dev/null 2>&1 && rm -f 7z2600-linux-arm64.tar.xz\"",
         "SkipOnFailure": false
     },
     {
@@ -35,33 +35,11 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd {{$FullBaseDir}} && echo \\\"Changed to Base Directory\\\" && ../7-Zip/7zzs x -y -p{{BasePassword}} latest.7z && echo \\\"Extracted Base Files\\\" >/dev/null 2>&1 && rm -f latest.7z\"",
+        "UpdateSourceArgs": "-c \"cd {{$FullBaseDir}} && echo \\\"Changed to Base Directory and Starting Archive Extraction, This may take some time.\\\" && ../7-Zip/7zzs x -y -p{{BasePassword}} latest.7z && echo \\\"Finished Extracting Base Files\\\" >/dev/null 2>&1 && rm -f latest.7z\"",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false,
         "UpdateSourceConditionSetting": "InstallbyURL",
         "UpdateSourceConditionValue": "true"
-    },
-    {
-        "UpdateStageName": "Game Files Download / Extract",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/bin/bash",
-	"UpdateSourceArgs": "-c \"cd {{$FullBaseDir}} && wget -i links.txt -q --show-progress --progress=bar:force 2>&1 && echo 'Starting Archive Extraction, This may take some time.' && ../7-Zip/7zzs x -y *.7z.001 >/dev/null 2>&1 || { echo '[ERROR] Archive extraction failed.' >&2; exit 1; } && rm -f *.7z.* links.txt extracts.txt && echo 'Finished Extracting Game Files'\"",
-        "OverwriteExistingFiles": true,
-        "SkipOnFailure": false,
-        "UpdateSourceConditionSetting": "InstallbyURL",
-        "UpdateSourceConditionValue": "true"
-    },
-    {
-        "UpdateStageName": "Extract Game Files (Fallback)",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/bin/bash",
-	"UpdateSourceArgs": "-c \"cd {{$FullBaseDir}} && echo 'Starting Archive Extraction, This may take some time.' && if ../7-Zip/7zzs x -y *.7z.001 >/dev/null 2>&1; then echo 'Extraction succeeded.' && rm -f *.7z.* *.7z links.txt extracts.txt && echo 'Cleaned up archive files.'; else echo '[ERROR] Extraction failed. Files have been preserved for troubleshooting.' >&2; fi && echo 'Finished Extracting Game Files'\"",
-        "OverwriteExistingFiles": true,
-        "SkipOnFailure": false,
-        "UpdateSourceConditionSetting": "InstallbyURL",
-        "UpdateSourceConditionValue": "extract"
     },
     {
         "UpdateStageName": "SteamCMD Server Download",
@@ -71,29 +49,6 @@
         "UpdateSourceArgs": "730",
         "UpdateSourceConditionSetting": "InstallbyURL",
         "UpdateSourceConditionValue": "false"
-    },
-    {
-        "UpdateStageName": "Patch Files Download",
-        "UpdateSourcePlatform": "All",
-        "UpdateSource": "FetchURL",
-        "UpdateSourceData": "{{PatchURL}}",
-        "UpdateSourceTarget": "{{$FullBaseDir}}",
-        "UnzipUpdateSource": true,
-        "OverwriteExistingFiles": true,
-        "DeleteAfterExtract": true,
-        "UpdateSourceConditionSetting": "InstallPatch",
-        "UpdateSourceConditionValue": "true"
-    },
-    {
-        "UpdateStageName": "Patch Files Extract",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cd {{$FullBaseDir}} && echo \\\"Changed to Game Directory\\\" && echo \\\"Extracting Patch Files\\\" && ../7-Zip/7zzs x -y -p{{PatchPassword}} latest.7z >/dev/null 2>&1 && rm -f latest.7z && echo \\\"Finished Extracting Patch Files\\\"\"",
-        "OverwriteExistingFiles": true,
-        "SkipOnFailure": false,
-        "UpdateSourceConditionSetting": "InstallPatch",
-        "UpdateSourceConditionValue": "true"
     },
     {
         "UpdateStageName": "Fix SRCDS Executable Permissions",
