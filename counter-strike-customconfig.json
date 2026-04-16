@@ -12,6 +12,18 @@
         "EnumValues": {}
     },
     {
+        "DisplayName": "GC Address",
+        "Category": "CSGO:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "Sets the GC Address the server will connect to (Custom Server Binary Needed)",
+        "Keywords": "GC,address",
+        "FieldName": "gc_address",
+        "InputType": "text",
+        "ParamFieldName": "gc_address",
+        "DefaultValue": "",
+        "EnumValues": {}
+    },
+    {
         "DisplayName": "Server Name",
         "Category": "CSGO:stadia_controller",
         "Subcategory": "Server:dns:1",
