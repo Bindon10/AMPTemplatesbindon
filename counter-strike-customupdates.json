@@ -58,7 +58,7 @@
         "UpdateSourceArgs": "-c \"cd {{$FullBaseDir}} && chmod +x srcds_linux && chmod +x srcds_run && echo \\\"Fixed permissions\\\" \"",
         "OverwriteExistingFiles": true,
         "SkipOnFailure": false,
-        "UpdateSourceConditionSetting": "InstallPatch",
+        "UpdateSourceConditionSetting": "InstallbyURL",
         "UpdateSourceConditionValue": "true"
     },
     {
