@@ -385,6 +385,22 @@
         }
     },
     {
+        "DisplayName": "Pure Tracing",
+        "Category": "CSGO:stadia_controller",
+        "Subcategory": "Server:dns:1",
+        "Description": "If Enabled, will make the server print a message to console whenever trying to verify a CRC for a file.",
+        "Keywords": "pure,server,cheat,hack,integrity,sv_pure_trace",
+        "FieldName": "sv_pure_trace",
+        "InputType": "enum",
+        "ParamFieldName": "sv_pure_trace",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "0",
+        "EnumValues": {
+            "0": "Disable CRC Check Messages",
+            "1": "Enable CRC Check Messages"
+        }
+    },
+    {
         "DisplayName": "Kick Clients On Pure Server",
         "Category": "CSGO:stadia_controller",
         "Subcategory": "Server:dns:1",
@@ -843,7 +859,7 @@
         "Category": "CSGO:stadia_controller",
         "Subcategory": "Gameplay:joystick:2",
         "Description": "If enabled, players will not be auto-kicked",
-        "Keywords": "disable,autokick,mp_disable_autokick",
+        "Keywords": "disable,autokick,mp_autokick",
         "FieldName": "mp_autokick",
         "InputType": "checkbox",
         "ParamFieldName": "mp_autokick",
