@@ -389,6 +389,7 @@
         "FieldName": "sv_pure",
         "InputType": "enum",
         "ParamFieldName": "sv_pure",
+		"IncludeInCommandLine": true,
         "DefaultValue": "0",
         "EnumValues": {
             "0": "Client files not restricted",
