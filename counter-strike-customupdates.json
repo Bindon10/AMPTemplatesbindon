@@ -206,7 +206,8 @@
         "UnzipUpdateSource": true,
         "OverwriteExistingFiles": true,
         "DeleteAfterExtract": true,
-        "SkipOnFailure": false
+        "SkipOnFailure": false,
+		"UpdateSourceConditionSetting": "InstallNLR"
     },
     {
         "UpdateStageName": "NoLobbyReservation Gamedata Download",
@@ -215,7 +216,8 @@
         "UpdateSourceData": "https://raw.githubusercontent.com/nuxencs/NoLobbyReservation/refs/heads/master/addons/sourcemod/gamedata/nolobbyreservation.games.txt",
         "UpdateSourceTarget": "{{$FullBaseDir}}csgo/addons/sourcemod/gamedata",
         "OverwriteExistingFiles": true,
-        "SkipOnFailure": false
+        "SkipOnFailure": false,
+		"UpdateSourceConditionSetting": "InstallNLR"
     },
     {
         "UpdateStageName": "NoLobbyReservation Scripting Download",
@@ -224,6 +226,7 @@
         "UpdateSourceData": "https://raw.githubusercontent.com/nuxencs/NoLobbyReservation/refs/heads/master/addons/sourcemod/scripting/nolobbyreservation.sp",
         "UpdateSourceTarget": "{{$FullBaseDir}}csgo/addons/sourcemod/scripting",
         "OverwriteExistingFiles": true,
-        "SkipOnFailure": false
+        "SkipOnFailure": false,
+		"UpdateSourceConditionSetting": "InstallNLR"
     }
 ]
