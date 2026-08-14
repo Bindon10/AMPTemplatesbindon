@@ -26,6 +26,17 @@
         "SkipOnFailure": false
     },
     {
+        "UpdateStageName": "Steamworks SDK Fix",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "1007",
+        "UpdateSourceArgs": "1007",
+		"UpdateSourceTarget":"{{$FullBaseDir}}/Binaries/Win64",
+		"ForceDownloadPlatform": "Windows",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    },
+    {
         "UpdateStageName": "Initialise Wine",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
