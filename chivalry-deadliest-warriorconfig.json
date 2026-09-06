@@ -319,7 +319,7 @@
     },
 	{
         "DisplayName": "Client Tickrate",
-        "Category": "Chivalry Medieval Warfare:stadia_controller",
+        "Category": "Chivalry Deadliest Warrior:stadia_controller",
         "Subcategory": "Server:dns:1",
         "Description": "Sets the maximum Tickrate a client will use while connected to the server",
         "Keywords": "max,tickrate,tick,Maxtick",
@@ -334,7 +334,7 @@
     },
 	{
         "DisplayName": "Net Server Tickrate",
-        "Category": "Chivalry Medieval Warfare:stadia_controller",
+        "Category": "Chivalry Deadliest Warrior:stadia_controller",
         "Subcategory": "Server:dns:1",
         "Description": "Sets the maximum Tickrate the server will use",
         "Keywords": "max,tickrate,tick,Maxtick",
@@ -349,7 +349,7 @@
     },
 	{
         "DisplayName": "Lan Maximum Tickrate",
-        "Category": "Chivalry Medieval Warfare:stadia_controller",
+        "Category": "Chivalry Deadliest Warrior:stadia_controller",
         "Subcategory": "Server:dns:1",
         "Description": "Sets the maximum Tickrate the LAN server will use",
         "Keywords": "max,tickrate,tick,Maxtick",
