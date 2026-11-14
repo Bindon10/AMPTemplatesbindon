@@ -22,5 +22,14 @@
         "UpdateSourceData": "/bin/bash",
         "UpdateSourceArgs": "-c \"S=\\\"{{$FullBaseDir}}src/stage{{$FullBaseDir}}server\\\"; D=\\\"{{$FullBaseDir}}server\\\"; mkdir -p \\\"$D\\\" && { cp -rn \\\"$S/.\\\" \\\"$D/\\\" 2>/dev/null; true; } && install -m 755 \\\"$S/sbin/bnetd\\\" \\\"$D/sbin/bnetd\\\" && cp -f \\\"$S/etc/pvpgn/versioncheck.json\\\" \\\"$D/etc/pvpgn/versioncheck.json\\\" && rm -rf \\\"{{$FullBaseDir}}src/build\\\" \\\"{{$FullBaseDir}}src/stage\\\"\"",
         "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "bnetd.conf Template File Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/Bindon10/AMPTemplatesbindon/main/pvpgnbnetd.conf",
+        "UpdateSourceArgs": "AMP_bnetd.conf",
+        "UpdateSourceTarget": "{{$FullRootDir}}",
+        "OverwriteExistingFiles": true
     }
 ]
