@@ -1,0 +1,33 @@
+[
+    {
+        "ConfigFile": "server/etc/pvpgn/bnetd.conf",
+        "AutoMap": false,
+        "Importable": true,
+        "ConfigType": "kvp",
+        "ConfigFormat": "{0} = \"{1}\"",
+        "ConfigFormatRegex": "^(?<key>[A-Za-z0-9_]+)\\s*=\\s*\"?(?<value>[^\"#]*?)\"?\\s*(?:#.*)?$",
+        "Subsections": [
+            {
+                "Heading": "$root",
+                "SettingMappings": {
+                    "servername": "servername",
+                    "description": "description",
+                    "location": "location",
+                    "track": "track",
+                    "new_accounts": "new_accounts",
+                    "max_accounts": "max_accounts",
+                    "allowed_clients": "allowed_clients",
+                    "allow_bad_version": "allow_bad_version",
+                    "allow_unknown_version": "allow_unknown_version",
+                    "max_connections": "max_connections",
+                    "max_conns_per_IP": "max_conns_per_IP",
+                    "passfail_count": "passfail_count",
+                    "passfail_bantime": "passfail_bantime",
+                    "storage_path": "storage_path",
+                    "loglevels": "loglevels",
+                    "shutdown_delay": "shutdown_delay"
+                }
+            }
+        ]
+    }
+]

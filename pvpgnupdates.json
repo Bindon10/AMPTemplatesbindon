@@ -1,0 +1,26 @@
+[
+    {
+        "UpdateStageName": "PvPGN Source Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}\\\" && if [ -d src/.git ]; then git -C src fetch --depth 1 origin \\\"{{PvPGNRef}}\\\" && git -C src checkout -f FETCH_HEAD; else rm -rf src && git clone --depth 1 --branch \\\"{{PvPGNRef}}\\\" https://github.com/pvpgn/pvpgn-server.git src; fi\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "PvPGN Build",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd \\\"{{$FullBaseDir}}src\\\" && rm -rf build stage && cmake -G \\\"Unix Makefiles\\\" -S . -B build -D CMAKE_BUILD_TYPE=Release -D WITH_D2CS=OFF -D WITH_D2DBS=OFF -D WITH_SQLITE3=ON -D WITH_LUA={{BuildLua}} -D CMAKE_INSTALL_PREFIX=\\\"{{$FullBaseDir}}server\\\" && cmake --build build -j\\\"$(nproc)\\\" && DESTDIR=\\\"{{$FullBaseDir}}src/stage\\\" cmake --install build\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "PvPGN Install",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"S=\\\"{{$FullBaseDir}}src/stage{{$FullBaseDir}}server\\\"; D=\\\"{{$FullBaseDir}}server\\\"; mkdir -p \\\"$D\\\" && { cp -rn \\\"$S/.\\\" \\\"$D/\\\" 2>/dev/null; true; } && install -m 755 \\\"$S/sbin/bnetd\\\" \\\"$D/sbin/bnetd\\\" && cp -f \\\"$S/etc/pvpgn/versioncheck.json\\\" \\\"$D/etc/pvpgn/versioncheck.json\\\" && rm -rf \\\"{{$FullBaseDir}}src/build\\\" \\\"{{$FullBaseDir}}src/stage\\\"\"",
+        "SkipOnFailure": false
+    }
+]

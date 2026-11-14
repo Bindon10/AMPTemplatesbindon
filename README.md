@@ -18,6 +18,14 @@ Documentation for this game is very unavailable/unreliable as the Remaster flood
     This template utilizes Wine/xvfb for Linux as the linux version is unmaintained and broken, for ease you will probably want to run the instance in a docker container.
     There has been limited testing in Windows, as such I cannot guarantee that this template works 100% on Windows.
 
+For PvPGN (Warcraft III),
+Builds PvPGN-PRO from source on each update, Linux only.
+
+    Running the instance in a container is recommended, as it provides the build tools. On a bare host you need git, cmake, a C++ compiler, and zlib/SQLite headers.
+    Clients need the W3L loader (https://github.com/w3lh/w3l) and a gateway entry pointing at your server, on a patch between 1.22a and 1.28.
+    Players behind the same NAT as the server need entries in server/etc/pvpgn/address_translation.conf for remote players to join their games.
+    The server has no console input; administer it in-game with an account given admin rights.
+
 If you believe that any of these templates needs to be updated or have changes made, please submit a pull request with a justification for why that change is needed.
 
 Once you've submitted a pull request, it will be reviewed and tested when I have the time to get around to it.

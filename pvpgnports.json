@@ -1,0 +1,16 @@
+[
+    {
+        "Protocol": "Both",
+        "Port": 6112,
+        "Ref": "BnetPort",
+        "Name": "Battle.net Port",
+        "Description": "Client login, chat and game list. WC3 clients always connect on 6112, so leave this unchanged"
+    },
+    {
+        "Protocol": "TCP",
+        "Port": 6200,
+        "Ref": "W3RoutePort",
+        "Name": "W3 Route Port",
+        "Description": "Warcraft III Play Game / Arranged Team routing (w3routeaddr in bnetd.conf)"
+    }
+]
